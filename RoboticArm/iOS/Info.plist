@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Robotic Arm</string>
+	<string>RoboticArm</string>
 	<key>CFBundleName</key>
-	<string>Robotic Arm</string>
+	<string>RoboticArm</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.robotic-arm</string>
+	<string>mizukikiki.roboticarm</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

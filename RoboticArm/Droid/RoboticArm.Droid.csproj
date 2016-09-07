@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{46556EE9-97F3-42CD-8727-76F64082CE65}</ProjectGuid>
+    <ProjectGuid>{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>RoboticArm.Droid</RootNamespace>
@@ -74,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RoboticArm\RoboticArm.csproj">
-      <Project>{A55F9158-F174-4AFD-A66D-2924F9CEBDEB}</Project>
+      <Project>{6E3E039D-CB59-4EAE-9DA4-A0090036802B}</Project>
       <Name>RoboticArm</Name>
     </ProjectReference>
   </ItemGroup>

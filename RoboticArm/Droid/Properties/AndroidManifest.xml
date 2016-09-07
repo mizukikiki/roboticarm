@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.robotic_arm">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="mizukikiki.roboticarm">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="Robotic Arm">
+	<application android:label="RoboticArm">
 	</application>
 </manifest>
