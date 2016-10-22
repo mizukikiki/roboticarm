@@ -5,6 +5,67 @@ var util = require('util');
 
 var Pca9685Driver = require("pca9685").Pca9685Driver;
 
+// default positions
+var defaultHip = 50;
+var defaultShoulder = 50;
+var defaultElbow = 50;
+var defaultClaw = 50;
+
+var step = 4;
+
+var redArm = {
+  "name": "red",
+  "position": { "hip": defaultHip, "shoulder": defaultShoulder, 
+		"elbow": defaultElbow, "claw": defaultClaw },
+  "hip": { "channel": 3, "min": 1100, "max": 2300 },
+  "shoulder": { "channel": 1, "min": 700, "max": 1250 },
+  "elbow": { "channel": 2, "min": 1300, "max": 2200 },
+  "claw": { "channel": 0, "min": 900, "max": 2300 }
+}
+
+var blueArm = {
+  "name": "blue",
+  "position": { "hip": defaultHip, "shoulder": defaultShoulder, 
+		"elbow": defaultElbow, "claw": defaultClaw },
+  "hip": { "channel": 12, "min": 1000, "max": 2400 },
+  "shoulder": { "channel": 13, "min": 800, "max": 1350 },
+  "elbow": { "channel": 14, "min": 1000, "max": 1900 },
+  "claw": { "channel": 15, "min": 700, "max": 2100 }
+}
+
+function getPulseLength(position, min, max) {
+    var delta = max - min;
+    var ratio = delta / 100;
+    return min + ratio * position;
+}
+
+function positionBodyPart(name, part, position, min, max, channel) {
+    var pulseLength = getPulseLength(position, min, max);
+    console.log(name + ' ' + part + ' set to ' + pulseLength);
+    pwm.setPulseLength(channel, pulseLength);
+}
+
+function positionArm(arm) {
+    positionBodyPart(arm.name, "hip", arm.position.hip, arm.hip.min,
+		     arm.hip.max, arm.hip.channel);
+    positionBodyPart(arm.name, "shoulder", arm.position.shoulder,
+		     arm.shoulder.min, arm.shoulder.max, arm.shoulder.channel);
+    positionBodyPart(arm.name, "elbow", arm.position.elbow, arm.elbow.min,
+		     arm.elbow.max, arm.elbow.channel);
+    positionBodyPart(arm.name, "claw", arm.position.claw, arm.claw.min,
+		     arm.claw.max, arm.claw.channel);
+}
+
+function processArms(command) {
+    console.log('command ' + command);
+    if (command === 'ff') {
+        pwm.allChannelsOff();
+    }
+    else if (command == 'cc') {
+        positionArm(redArm);
+        positionArm(blueArm);
+    }
+}
 
 // PCA9685 options
 var options = {
@@ -53,7 +114,7 @@ EchoCharacteristic.prototype.onWriteRequest = function(data, offset, withoutResp
 
     this._updateValueCallback(this._value);
   }
-  pwm.setPulseLength(14, 1600);
+  processArms(data.toString('hex'));
   callback(this.RESULT_SUCCESS);
 };
 
@@ -101,5 +162,5 @@ bleno.on('advertisingStart', function(error) {
 process.on("SIGINT", function () {
     console.log("\nGracefully shutting down from SIGINT (Ctrl-C)");
     pwm.allChannelsOff();
-    setTimeout(function() { process.exit(0); }, 3000);
+    setTimeout(function() { process.exit(0); }, 700);
 });
