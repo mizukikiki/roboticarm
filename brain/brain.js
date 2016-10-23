@@ -11,7 +11,7 @@ var defaultShoulder = 50;
 var defaultElbow = 50;
 var defaultClaw = 50;
 
-var step = 4;
+var step = 15;
 
 var redArm = {
   "name": "red",
@@ -56,14 +56,96 @@ function positionArm(arm) {
 		     arm.claw.max, arm.claw.channel);
 }
 
+function resetArm(arm) {
+    arm.position.hip = defaultHip;
+    arm.position.shoulder = defaultShoulder;
+    arm.position.elbow = defaultElbow;
+    arm.position.claw = defaultClaw; 
+}
+
+function alterPulseLength(arm, bodyPart, delta) {
+    var position = arm.position[bodyPart];
+    var min = arm[bodyPart].min;
+    var max = arm[bodyPart].max;
+    console.log(bodyPart + ' MIN ' + min + ' MAX ' + max);
+    var newPosition = position + delta;
+    if (newPosition < 0) {
+        newPosition = 0;
+    }
+    else if (newPosition > 100) {
+        newPosition = 100;
+    }
+    console.log(arm.name + ' current position ' + position + ' new position ' + newPosition); 
+    arm.position[bodyPart] = newPosition;
+}
+
+function moveArm(arm, operation) {
+    switch(operation) {
+        case '1':
+                alterPulseLength(arm, 'hip', step); 
+                break;
+	case '2':
+                alterPulseLength(arm, 'hip', step * -1);
+                break;
+	case '3':
+                alterPulseLength(arm, 'shoulder', step);
+                break;
+	case '4':
+                alterPulseLength(arm, 'shoulder', step * -1);
+                break;
+	case '5':
+                alterPulseLength(arm, 'elbow', step);
+                break;
+	case '6':
+                alterPulseLength(arm, 'elbow', step * -1);
+                break;
+	case '7':
+                alterPulseLength(arm, 'claw', step);
+                break;
+	case '8':
+                alterPulseLength(arm, 'claw', step * -1);
+                break;
+    } 
+} 
+
 function processArms(command) {
     console.log('command ' + command);
     if (command === 'ff') {
         pwm.allChannelsOff();
     }
-    else if (command == 'cc') {
+    else if (command === 'cc') {
+        resetArm(redArm);
+        resetArm(blueArm);
         positionArm(redArm);
         positionArm(blueArm);
+    }
+    else if (command === 'aa') {
+        resetArm(redArm);
+	positionArm(redArm);
+    }
+    else if (command === 'bb') {
+        resetArm(blueArm);
+        positionArm(blueArm);
+    }
+    else if (command.match(/[a-c][1-8]/)) {
+        var regex = /(.)(\d)/
+        var match = regex.exec(command);
+        var armRule = match[1];
+        var operation = match[2];
+        if (armRule === 'a') {
+            moveArm(redArm, operation);
+            positionArm(redArm);
+        }
+	else if (armRule === 'b') {
+            moveArm(blueArm, operation);
+            positionArm(blueArm);
+        }
+        else if (armRule === 'c') {
+            moveArm(redArm, operation);
+            moveArm(blueArm, operation);
+            positionArm(redArm);
+            positionArm(blueArm);
+        }
     }
 }
 
