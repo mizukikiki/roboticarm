@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboticArm", "RoboticArm\Ro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboticArm.iOS", "iOS\RoboticArm.iOS.csproj", "{43ECCA7C-5BCA-484F-80BE-CDA4E898E00F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboticArm.Droid", "Droid\RoboticArm.Droid.csproj", "{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,17 +39,5 @@ Global
 		{43ECCA7C-5BCA-484F-80BE-CDA4E898E00F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{43ECCA7C-5BCA-484F-80BE-CDA4E898E00F}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{43ECCA7C-5BCA-484F-80BE-CDA4E898E00F}.Debug|iPhone.Build.0 = Debug|iPhone
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Release|iPhone.Build.0 = Release|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{D50567FE-C0BE-4CD6-8271-FC23B5AE6928}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
