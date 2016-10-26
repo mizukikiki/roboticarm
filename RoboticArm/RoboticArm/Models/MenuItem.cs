@@ -7,7 +7,8 @@ namespace RoboticArm.Models
 		Rest,
 		RedArm,
 		BlueArm,
-		BothArms
+		BothArms,
+		Disconnect
 	}
 
 	public class HomeMenuItem

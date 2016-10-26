@@ -7,9 +7,9 @@ namespace RoboticArm.Views
 	{
 		public MainNavigationPage()
 		{
-			BarBackgroundColor = Color.FromHex("#03A9F4");
+			BarBackgroundColor = Color.FromHex("#456CD1");
 			BarTextColor = Color.White;
-			Title = "BCLegal";
+			Title = "Robotic Arm";
 		}
 	}
 }

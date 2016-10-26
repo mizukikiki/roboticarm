@@ -17,12 +17,13 @@ namespace RoboticArm.ViewModels
 		public MainMasterDetailPageViewModel(INavigationService navigationService)
 		{
 			_navigationService = navigationService;
-
+			var selectedRest = new HomeMenuItem
+			{
+				Title = "Rest",
+				MenuType = HomeMenuType.Rest
+			};
 			MenuItems = new ObservableCollection<HomeMenuItem> {
-				new HomeMenuItem {
-					Title = "Rest",
-					MenuType = HomeMenuType.Rest
-				},
+				selectedRest,
 				new HomeMenuItem {
 					Title = "Red Arm",
 					MenuType = HomeMenuType.RedArm
@@ -34,9 +35,14 @@ namespace RoboticArm.ViewModels
 				new HomeMenuItem {
 					Title = "Both Arms",
 					MenuType = HomeMenuType.BothArms
+				},
+				new HomeMenuItem {
+					Title = "Disconnect",
+					MenuType = HomeMenuType.Disconnect
 				}
 			};
 			SelectCommand = new DelegateCommand(Navigate);
+			SelectedMenuItem = selectedRest;
 		}
 
 		public ObservableCollection<HomeMenuItem> MenuItems { get; set; }

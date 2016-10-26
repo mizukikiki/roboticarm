@@ -21,7 +21,7 @@ namespace RoboticArm.iOS
 			});
 
 			global::Xamarin.Forms.Forms.Init();
-
+			Corcav.Behaviors.Infrastructure.Init();
 			// Code for starting up the Xamarin Test Cloud Agent
 			LoadApplication(new App());
 

@@ -82,6 +82,9 @@
     <Reference Include="Prism">
       <HintPath>..\packages\Prism.Core.6.2.1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Prism.dll</HintPath>
     </Reference>
+    <Reference Include="Corcav.Behaviors">
+      <HintPath>..\packages\Corcav.Behaviors.2.3.4\lib\Corcav.Behaviors.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
