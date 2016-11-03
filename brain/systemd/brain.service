@@ -1,0 +1,16 @@
+[Unit]
+Description=Brain
+Wants=bluetooth.service
+After=network.target bluetooth.service
+
+[Service]
+ExecStart=/usr/local/bin/node /home/pi/roboticarm/brain/brain.js
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=brain
+Environment=NODE_PATH=/home/pi/roboticarm/brain
+
+[Install]
+WantedBy=multi-user.target
