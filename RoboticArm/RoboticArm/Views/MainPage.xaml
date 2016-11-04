@@ -5,6 +5,6 @@
              prism:ViewModelLocator.AutowireViewModel="True"
 			 x:Class="RoboticArm.Views.MainPage" Title="Robotic Arm">
   <StackLayout>
-  	
+  	<Label Text="{Binding Info}" FontSize="12" />
   </StackLayout>
 </ContentPage>
