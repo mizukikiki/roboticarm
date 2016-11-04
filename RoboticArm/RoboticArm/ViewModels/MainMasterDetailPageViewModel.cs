@@ -70,16 +70,19 @@ namespace RoboticArm.ViewModels
 			switch (menuType)
 			{
 				case HomeMenuType.Rest:
-					_navigationService.NavigateAsync("ConfigurationNavigation/Configuration");
+					_navigationService.NavigateAsync("MainNavigation/Main?operation=rest");
 					break;
 				case HomeMenuType.RedArm:
-					_navigationService.NavigateAsync("RequestAlertNavigation/RequestAlert");
+					_navigationService.NavigateAsync("MainNavigation/Main?operation=red");
 					break;
 				case HomeMenuType.BlueArm:
-					_navigationService.NavigateAsync("RequestAlertNavigation/RequestAlert");
+					_navigationService.NavigateAsync("MainNavigation/Main?operation=blue");
 					break;
 				case HomeMenuType.BothArms:
-					_navigationService.NavigateAsync("RequestAlertNavigation/RequestAlert");
+					_navigationService.NavigateAsync("MainNavigation/Main?operation=purple");
+					break;
+				case HomeMenuType.Disconnect:
+					_navigationService.NavigateAsync("MainNavigation/Main?operation=disconnect");
 					break;
 			}
 		}
