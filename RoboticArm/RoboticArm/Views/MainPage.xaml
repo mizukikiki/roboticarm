@@ -5,6 +5,15 @@
              prism:ViewModelLocator.AutowireViewModel="True"
 			 x:Class="RoboticArm.Views.MainPage" Title="Robotic Arm">
   <StackLayout>
-  	<Label Text="{Binding Info}" FontSize="12" />
+  	<Label XAlign="Center" YAlign="Center" Text="{Binding Info}" FontSize="12" />
+	<Button Text="Shoulder Up" TextColor="White" BackgroundColor="{Binding Color}" FontSize="10" Command="{Binding ArmCommand}" CommandParameter="4" HorizontalOptions="FillAndExpand" />	
+	<Button Text="Shoulder Down" TextColor="White" BackgroundColor="{Binding Color}" FontSize="10" Command="{Binding ArmCommand}" CommandParameter="3" HorizontalOptions="FillAndExpand" />
+	<Button Text="Hip Left" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="1" HorizontalOptions="FillAndExpand" />	
+	<Button Text="Hip Right" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="2" HorizontalOptions="FillAndExpand" />
+	<Button Text="Elbow Up" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="5" HorizontalOptions="FillAndExpand" />	
+	<Button Text="Elbow Down" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="6" HorizontalOptions="FillAndExpand" />
+	<Button Text="Claw Open" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="8" HorizontalOptions="FillAndExpand" />	
+	<Button Text="Claw Close" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="7" HorizontalOptions="FillAndExpand" />
+	<Button Text="Reset" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="X" HorizontalOptions="FillAndExpand" />		
   </StackLayout>
 </ContentPage>

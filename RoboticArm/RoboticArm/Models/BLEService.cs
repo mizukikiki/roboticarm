@@ -55,7 +55,7 @@ namespace RoboticArm
 			else {
 				await _adapter.StartScanningForDevicesAsync();
 			}
-			return "WTF " + _ble.State + " " + _device.Name;
+			return _ble.State + " (" + _device.Name + ")";
 		}
 
 		private static byte[] GetBytes(string text)
