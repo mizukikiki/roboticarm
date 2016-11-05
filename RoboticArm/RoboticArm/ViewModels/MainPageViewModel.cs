@@ -38,6 +38,27 @@ namespace RoboticArm.ViewModels
 		{
 			var op = null as object;
 			parameters.TryGetValue("operation", out op);
+			var operation = Convert.ToString(op);
+			if (operation == "red")
+			{
+				await _bleService.SendAsync("c1");
+			}
+			if (operation == "blue")
+			{
+				await _bleService.SendAsync("c6");
+			}
+			if (operation == "purple")
+			{
+				await _bleService.SendAsync("c7");
+			}
+			if (operation == "disconnect")
+			{
+				await _bleService.SendAsync("cc");
+			}
+			if (operation == "rest")
+			{
+				await _bleService.SendAsync("ff");
+			}
 			Info = Convert.ToString(op) + " " + await _bleService.GetInfo();
 			base.OnNavigatedTo(parameters);
 		}

@@ -32,8 +32,7 @@ namespace RoboticArm
 		{
 			if (_characteristic != null)
 			{
-				byte[] x = null;
-				await _characteristic.WriteAsync(x);
+				await _characteristic.WriteAsync(GetBytes(message));
 			}
 		}
 
@@ -57,6 +56,11 @@ namespace RoboticArm
 				await _adapter.StartScanningForDevicesAsync();
 			}
 			return "WTF " + _ble.State + " " + _device.Name;
+		}
+
+		private static byte[] GetBytes(string text)
+		{
+			return text.Split(' ').Where(token => !string.IsNullOrEmpty(token)).Select(token => Convert.ToByte(token, 16)).ToArray();
 		}
 	}
 }
