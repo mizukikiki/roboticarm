@@ -36,8 +36,19 @@ namespace RoboticArm
 			}
 		}
 
+		public async Task Disconnect()
+		{
+			if (_device != null)
+			{
+				await _adapter.DisconnectDeviceAsync(_device);
+				_device = null;
+				_characteristic = null;
+			}
+		}
+
 		public async Task<string> GetInfo()
 		{
+			
 			if (_device != null)
 			{
 				await _adapter.ConnectToDeviceAsync(_device);
@@ -57,6 +68,7 @@ namespace RoboticArm
 			}
 			return _ble.State + " (" + _device.Name + ")";
 		}
+
 
 		private static byte[] GetBytes(string text)
 		{

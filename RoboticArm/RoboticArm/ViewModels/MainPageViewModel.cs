@@ -63,7 +63,7 @@ namespace RoboticArm.ViewModels
 			var operation = Convert.ToString(op);
 			if (operation == "red")
 			{
-				Color = "Red";
+				Color = "Maroon";
 				_prefix = 'a';
 			}
 			if (operation == "blue")
@@ -73,12 +73,16 @@ namespace RoboticArm.ViewModels
 			}
 			if (operation == "purple")
 			{
-				Color = "Purple";
+				Color = "#9A4EAE";
 				_prefix = 'c';
 			}
 			if (operation == "disconnect")
 			{
-				await _bleService.SendAsync("cc");
+				await _bleService.SendAsync("ff");
+				await _bleService.Disconnect();
+				Color = "Gray";
+				Info = "Status: Disconnected";
+				return;
 			}
 			if (operation == "rest")
 			{

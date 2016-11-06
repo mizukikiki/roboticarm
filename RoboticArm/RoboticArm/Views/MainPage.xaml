@@ -4,16 +4,44 @@
 			 xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
 			 x:Class="RoboticArm.Views.MainPage" Title="Robotic Arm">
-  <StackLayout>
-  	<Label XAlign="Center" YAlign="Center" Text="{Binding Info}" FontSize="12" />
-	<Button Text="Shoulder Up" TextColor="White" BackgroundColor="{Binding Color}" FontSize="10" Command="{Binding ArmCommand}" CommandParameter="4" HorizontalOptions="FillAndExpand" />	
-	<Button Text="Shoulder Down" TextColor="White" BackgroundColor="{Binding Color}" FontSize="10" Command="{Binding ArmCommand}" CommandParameter="3" HorizontalOptions="FillAndExpand" />
-	<Button Text="Hip Left" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="1" HorizontalOptions="FillAndExpand" />	
-	<Button Text="Hip Right" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="2" HorizontalOptions="FillAndExpand" />
-	<Button Text="Elbow Up" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="5" HorizontalOptions="FillAndExpand" />	
-	<Button Text="Elbow Down" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="6" HorizontalOptions="FillAndExpand" />
-	<Button Text="Claw Open" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="8" HorizontalOptions="FillAndExpand" />	
-	<Button Text="Claw Close" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="7" HorizontalOptions="FillAndExpand" />
-	<Button Text="Reset" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="X" HorizontalOptions="FillAndExpand" />		
+  <StackLayout Padding="3">
+  	<Label XAlign="Center" YAlign="Center" Text="{Binding Info}" FontSize="14" />
+	<BoxView Color="White" HeightRequest="50" />
+	<Grid RowSpacing="15" ColumnSpacing="1">
+		<Grid.RowDefinitions>
+        	<RowDefinition Height="*" />
+        	<RowDefinition Height="*" />
+        	<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="30" />
+			<ColumnDefinition Width="*" />				
+		</Grid.ColumnDefinitions>
+		<Button Text="SHOULDER UP" TextColor="White" BackgroundColor="{Binding Color}" FontSize="8" Command="{Binding ArmCommand}" CommandParameter="4" HorizontalOptions="FillAndExpand" 
+				Grid.Row="0" Grid.Column="1" />	
+		<Button Text="SHOULDER DN" TextColor="White" BackgroundColor="{Binding Color}" FontSize="8" Command="{Binding ArmCommand}" CommandParameter="3" HorizontalOptions="FillAndExpand"
+				Grid.Row="2" Grid.Column="1" />
+		<Button Text="HIP LEFT" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="1" HorizontalOptions="FillAndExpand"
+				Grid.Row="1" Grid.Column="0" />
+		<Button Text="HIP RIGHT" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="2" HorizontalOptions="FillAndExpand"
+				Grid.Row="1" Grid.Column="2" />
+		<Button Text="ELBOW UP" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="5" HorizontalOptions="FillAndExpand"
+				Grid.Row="0" Grid.Column="4" />
+		<Button Text="ELBOW DN" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="6" HorizontalOptions="FillAndExpand"
+				Grid.Row="2" Grid.Column="4" />
+	</Grid>
+	<BoxView Color="White" HeightRequest="50" />
+	<StackLayout Orientation="Horizontal">
+		<BoxView WidthRequest="50" />
+		<Button Text="CLAW CLOSE" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="7" HorizontalOptions="FillAndExpand" />
+		<BoxView WidthRequest="10" />
+		<Button Text="CLAW OPEN" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="8" HorizontalOptions="FillAndExpand" />
+		<BoxView WidthRequest="50" />
+	</StackLayout>
+	<BoxView HeightRequest="70" Color="White" />
+	<Button Text="RESET" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="10" Command="{Binding ArmCommand}" CommandParameter="X" HorizontalOptions="FillAndExpand" />		
   </StackLayout>
 </ContentPage>
