@@ -84,7 +84,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>d145f2fa-dd08-4435-8332-ad88936f232b</CodesignProvision>
+    <CodesignProvision>241c41dd-0cb3-4164-b559-c8214b83d3c4</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -137,6 +137,12 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\arm29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\arm58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\arm87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\arm80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\arm120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\arm180.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
