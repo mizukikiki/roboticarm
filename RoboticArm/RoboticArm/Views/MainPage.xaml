@@ -16,22 +16,22 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="10" />
 			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="30" />
 			<ColumnDefinition Width="*" />				
 		</Grid.ColumnDefinitions>
 		<Button Text="SHOULDER UP" TextColor="White" BackgroundColor="{Binding Color}" FontSize="8" Command="{Binding ArmCommand}" CommandParameter="4" HorizontalOptions="FillAndExpand" 
 				Grid.Row="0" Grid.Column="1" />	
-		<Button Text="SHOULDER DN" TextColor="White" BackgroundColor="{Binding Color}" FontSize="8" Command="{Binding ArmCommand}" CommandParameter="3" HorizontalOptions="FillAndExpand"
+		<Button Text="SHOULDER DOWN" TextColor="White" BackgroundColor="{Binding Color}" FontSize="8" Command="{Binding ArmCommand}" CommandParameter="3" HorizontalOptions="FillAndExpand"
 				Grid.Row="2" Grid.Column="1" />
 		<Button Text="HIP LEFT" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="1" HorizontalOptions="FillAndExpand"
 				Grid.Row="1" Grid.Column="0" />
 		<Button Text="HIP RIGHT" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="2" HorizontalOptions="FillAndExpand"
-				Grid.Row="1" Grid.Column="2" />
+				Grid.Row="1" Grid.Column="4" />
 		<Button Text="ELBOW UP" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="5" HorizontalOptions="FillAndExpand"
-				Grid.Row="0" Grid.Column="4" />
-		<Button Text="ELBOW DN" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="6" HorizontalOptions="FillAndExpand"
-				Grid.Row="2" Grid.Column="4" />
+				Grid.Row="0" Grid.Column="3" />
+		<Button Text="ELBOW DOWN" TextColor="White" BackgroundColor="{Binding Color}"  FontSize="8" Command="{Binding ArmCommand}" CommandParameter="6" HorizontalOptions="FillAndExpand"
+				Grid.Row="2" Grid.Column="3" />
 	</Grid>
 	<BoxView Color="White" HeightRequest="50" />
 	<StackLayout Orientation="Horizontal">
